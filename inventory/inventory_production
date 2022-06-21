@@ -2,7 +2,7 @@ all:
   hosts:
     master:
       var1: 50
-    slaves1:
+    slave1:
       var2: 50
     slaves3:
       var3: 50

@@ -1,6 +1,6 @@
-- hosts: nodes
+- hosts: slave1, slave2
   remote_user: root
   gather_facts: False
   roles:
      - prerequisite
-
+     - hbase_slave

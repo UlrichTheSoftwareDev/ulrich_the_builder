@@ -1,3 +1,44 @@
 - name: Say HEY
   debug:
     msg: "HEY {{var4}}"
+
+- name: stop firewalld
+  service:
+    name: firewalld
+    state: stopped
+
+- name: selinux permissive
+  selinux:
+    policy: targeted
+    state: permissive
+
+- name: create hbase user
+  user:
+    name: hbase
+    shell: /bin/bash
+    state: present
+
+- name: create hbase directory 
+  file:
+    path: /opt/hbase
+    owner: hbase
+    group: hbase
+    state: directory
+
+- name: download hbase binary
+  get_url:
+    url: "{{hbase_url}}"
+    dest: /opt/hbase
+
+- name: extract hbase tar
+  unarchive:
+    src: "/opt/hbase/{{hbase_tar}}"
+    dest: "/opt/hbase/"
+
+- name: install java 1.8
+  package:
+    name: 
+      - java-1.8.0-openjdk
+      - java-1.8.0-openjdk-devel
+    state: present
+ 

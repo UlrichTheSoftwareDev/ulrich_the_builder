@@ -1,0 +1,25 @@
+- name: Say HEY
+  debug:
+    msg: "HEY {{var4}}"
+
+- name: Template file hbase-env
+  template: 
+    src: hbase-env.sh
+    dest: "/opt/hbase/{{hbase_version}}/conf/"
+    owner: hbase
+    group: hbase
+
+- name: Template file hbase-site
+  template:
+    src: hbase-site.xml
+    dest: "/opt/hbase/{{hbase_version}}/conf/"
+    owner: hbase
+    group: hbase
+
+- name: Template file regionservers
+  template:
+    src: regionservers
+    dest: "/opt/hbase/{{hbase_version}}/conf/"
+    owner: hbase
+    group: hbase
+
