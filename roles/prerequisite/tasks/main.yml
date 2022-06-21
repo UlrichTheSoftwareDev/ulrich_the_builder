@@ -34,6 +34,8 @@
   unarchive:
     src: "/opt/hbase/{{hbase_tar}}"
     dest: "/opt/hbase/"
+    owner: hbase
+    group: hbase
 
 - name: install java 1.8
   package:
