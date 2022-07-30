@@ -1,7 +1,3 @@
-- name: Say HEY
-  debug:
-    msg: "HEY {{var4}}"
-
 - name: Template file hbase-env
   template: 
     src: hbase-env.sh
