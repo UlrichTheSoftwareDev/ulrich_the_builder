@@ -20,4 +20,6 @@
 ansible-playbook -i inventory/inventory_production master.yml
 
 ansible-playbook -i inventory/inventory_production nodes.yml
+
+/opt/hbase/hbase-2.4.12/bin/start-hbase.sh 
 ```
