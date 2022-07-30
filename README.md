@@ -1,14 +1,19 @@
 # ulrich_the_builder
 
 ##For Hbase only
+
 #update vars file
+
 ```group_vars/all.yml```
 
 #update template file
+
 ```roles/hbase_master/templates/```
+
 ```roles/hbase_slave/templates/```
 
 #update inventory file
+
 ```inventory/inventory_production```
 
 ```
